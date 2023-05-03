@@ -12,6 +12,13 @@ Object.assign(require("knex/lib/dialects/postgres").prototype, {
 });
 */
 
+import { NextRequest, NextResponse } from 'next/server';
+
+export const config = {
+  runtime: 'edge', // this is a pre-requisite
+  regions: ['iad1'], // only execute this function on iad1
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>

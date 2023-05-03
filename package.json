@@ -3,12 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build:db": "tsc -p tsconfig.db.json",
     "dev": "node_modules/.bin/next dev",
     "build": "node_modules/.bin/next build",
     "start": "node_modules/.bin/next start",
     "lint": "node_modules/.bin/next lint"
   },
   "dependencies": {
+    "@mikro-orm/better-sqlite": "^5.7.4",
+    "@mikro-orm/core": "^5.7.4",
+    "@mikro-orm/entity-generator": "^5.7.4",
+    "@mikro-orm/mariadb": "^5.7.4",
+    "@mikro-orm/migrations": "^5.7.4",
+    "@mikro-orm/mongodb": "^5.7.4",
+    "@mikro-orm/mysql": "^5.7.4",
+    "@mikro-orm/postgresql": "^5.7.4",
+    "@mikro-orm/seeder": "^5.7.4",
+    "@mikro-orm/sqlite": "^5.7.4",
+    "@neondatabase/serverless": "^0.4.3",
     "@types/node": "18.16.3",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
@@ -20,6 +32,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "4.9.5"
   }
 }

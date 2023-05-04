@@ -4,8 +4,10 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = "postgres://default:RIau6mtA4qiC@ep-sparkling-shadow-723955-pooler.us-east-1.postgres.vercel-storage.com/verceldb"
+  provider          = "postgresql"
+  url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model test {

@@ -29,7 +29,6 @@ export default async function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p>{JSON.stringify(data, null, 4)}</p>
             By{' '}
             <Image
               src="/vercel.svg"

@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { NextRequest, NextResponse, } from 'next/server';
+import { db } from "@vercel/postgres"
 
 export const config = {
   runtime: 'edge', // this is a pre-requisite
@@ -9,7 +10,14 @@ export const config = {
 };
 
 export default async function handler (request: NextRequest) {
-  const data: any[] = []
+  const client = await db.connect();
+
+  let data
+  try {
+    data = await client.sql`SELECT * FROM test;`;
+  } catch (error) {
+    return NextResponse.json({ error });
+  }
 
   return NextResponse.json({
     name: `Hello, from ${request.url} I'm now an Edge Function!`,

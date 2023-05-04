@@ -10,14 +10,14 @@ export const config = {
 };
 
 export default async function handler (request: NextRequest) {
-  const client = await db.connect();
+  /*const client = await db.connect();*/
 
-  let data
-  try {
+  let data: any[] = []
+  /*try {
     data = await client.sql`SELECT * FROM test;`;
   } catch (error) {
     return NextResponse.json({ error });
-  }
+  }*/
 
   return NextResponse.json({
     name: `Hello, from ${request.url} I'm now an Edge Function!`,

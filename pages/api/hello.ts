@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { DataSource } from "typeorm"
+import { DataSource } from "typeorm/browser"
 
 import { NextRequest, NextResponse, } from 'next/server';
 

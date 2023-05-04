@@ -1,10 +1,18 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Link from "next/link";
+import prisma from '@/lib/prisma'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export const runtime = 'edge'
+export const preferredRegion = 'home'
+export const dynamic = 'force-dynamic'
+
+export default async function Home() {
+  const data = await prisma.test.findMany()
+  console.log(data)
+
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
@@ -21,6 +29,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <p>{JSON.stringify(data, null, 4)}</p>
             By{' '}
             <Image
               src="/vercel.svg"

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Link from "next/link";
-import prisma from '@/lib/prisma'
+/*import prisma from '@/lib/prisma'*/
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,8 +10,8 @@ export const preferredRegion = 'home'
 export const dynamic = 'force-dynamic'
 
 export default async function Home() {
-  const data = await prisma.test.findMany()
-  console.log(data)
+  /*const data = await prisma.test.findMany()
+  console.log(data)*/
 
   return (
     <main

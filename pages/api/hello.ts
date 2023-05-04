@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { NextRequest, NextResponse, } from 'next/server';
-import { db } from "@vercel/postgres"
+/*import { db } from "@vercel/postgres"*/
 
 export const config = {
   runtime: 'edge', // this is a pre-requisite

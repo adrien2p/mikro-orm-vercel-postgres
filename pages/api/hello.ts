@@ -19,7 +19,6 @@ const prisma = global.prisma || new PrismaClient()
 if (process.env.NODE_ENV === 'development') global.prisma = prisma
 
 export default async function handler (request: NextRequest) {
-  await prisma.$connect()
   const data = await prisma.test.findMany()
 
   return NextResponse.json({

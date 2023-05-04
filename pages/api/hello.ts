@@ -10,11 +10,14 @@ export const config = {
   regions: ['iad1'], // only execute this function on iad1
 };
 
-(global as any).client = (global as any).client ?? new PrismaClient()
-
 export default async function handler (request: NextRequest) {
 
-  const data = await (global as any).client.test.findMany()
+  let data = []
+
+  if (typeof window === "undefined") {
+    (global as any).client = (global as any).client ?? new PrismaClient()
+    data = await (global as any).client.test.findMany()
+  }
 
   return NextResponse.json({
     name: `Hello, from ${request.url} I'm now an Edge Function!`,

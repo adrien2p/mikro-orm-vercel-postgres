@@ -5,7 +5,7 @@ import prisma from '@/lib/prisma'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const runtime = 'edge'
+export const runtime = 'experimental-edge'
 export const preferredRegion = 'home'
 export const dynamic = 'force-dynamic'
 

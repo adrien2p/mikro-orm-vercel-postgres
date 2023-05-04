@@ -10,7 +10,13 @@ export const config = {
   regions: ['iad1'], // only execute this function on iad1
 };
 
-const prisma = new PrismaClient();
+declare global {
+  var prisma: PrismaClient | undefined
+}
+
+const prisma = global.prisma || new PrismaClient()
+
+if (process.env.NODE_ENV === 'development') global.prisma = prisma
 
 export default async function handler (request: NextRequest) {
   await prisma.$connect()

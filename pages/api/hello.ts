@@ -13,6 +13,7 @@ export const config = {
 const prisma = new PrismaClient();
 
 export default async function handler (request: NextRequest) {
+  await prisma.$connect()
   const data = await prisma.test.findMany()
 
   return NextResponse.json({

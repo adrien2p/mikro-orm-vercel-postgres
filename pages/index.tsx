@@ -6,8 +6,8 @@ import Link from "next/link";
 const inter = Inter({ subsets: ['latin'] })
 
 /*export const runtime = 'experimental-edge'*/
-export const preferredRegion = 'home'
-export const dynamic = 'force-dynamic'
+/*export const preferredRegion = 'home'
+export const dynamic = 'force-dynamic'*/
 
 export default async function Home() {
   /*const data = await prisma.test.findMany()

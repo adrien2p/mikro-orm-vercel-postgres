@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import {createKysely} from "@vercel/postgres-kysely";
 import {Database} from "@/kisily/test";
+import {NextResponse} from "next/server";
 
 export const config = {
   runtime: 'edge', // this is a pre-requisite
@@ -10,8 +11,6 @@ export const config = {
 };
 
 export default async function handler(
-    request: NextApiRequest,
-    response: NextApiResponse,
 ) {
   const client = createKysely<Database>()
 
@@ -20,5 +19,5 @@ export default async function handler(
       .select(['id'])
       .execute()
 
-  return response.status(200).json({ data: tests });
+  return NextResponse.json({ data: tests });
 }

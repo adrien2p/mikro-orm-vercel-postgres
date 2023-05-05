@@ -5,6 +5,7 @@ import {createKysely} from "@vercel/postgres-kysely";
 import {Database} from "@/kisily/test";
 import {NextResponse} from "next/server";
 import * as awilix from "awilix";
+import {asValue} from "awilix";
 /*import * as utils from "@medusajs/utils";*/
 /*import * as glob from "glob";*/
 /*import * as sdk from "@medusajs/modules-sdk";*/
@@ -18,6 +19,10 @@ export default async function handler(
 ) {
   /*glob.globSync('**!/!*.ts')*/
   const container = awilix.createContainer()
+  container.register("test", asValue("test"))
+  const scope = container.createScope()
+  const test = scope.resolve("test")
+
   const client = createKysely<Database>()
 
   const tests = await client

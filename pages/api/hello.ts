@@ -6,7 +6,7 @@ import {Database} from "@/kisily/test";
 import {NextResponse} from "next/server";
 /*import * as awilix from "awilix";*/
 /*import * as utils from "@medusajs/utils";*/
-import * as glob from "glob";
+/*import * as glob from "glob";*/
 /*import * as sdk from "@medusajs/modules-sdk";*/
 
 export const config = {
@@ -16,7 +16,7 @@ export const config = {
 
 export default async function handler(
 ) {
-  glob.globSync('**/*.ts')
+  /*glob.globSync('**!/!*.ts')*/
   const client = createKysely<Database>()
 
   const tests = await client

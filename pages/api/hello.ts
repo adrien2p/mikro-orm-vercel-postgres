@@ -1,8 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { NextRequest, NextResponse, } from 'next/server';
-import { db } from "@vercel/postgres"
+import {createKysely} from "@vercel/postgres-kysely";
+import {Database} from "@/kisily/test";
+import { Pool } from '@vercel/postgres';
 
 export const config = {
   runtime: 'edge', // this is a pre-requisite
@@ -13,7 +14,12 @@ export default async function handler(
     request: NextApiRequest,
     response: NextApiResponse,
 ) {
-  const client = await db.connect();
-  const data = await client.sql`SELECT * FROM test;`;
-  return response.status(200).json({ data });
+  const client = createKysely<Database>()
+
+  const tests = await client
+      .selectFrom('test')
+      .select(['id'])
+      .execute()
+
+  return response.status(200).json({ data: tests });
 }

@@ -12,6 +12,7 @@
   "dependencies": {
     "@medusajs/modules-sdk": "^1.8.4",
     "@medusajs/utils": "^1.8.3",
+    "@mikro-orm/core": "^5.7.4",
     "@neondatabase/serverless": "^0.4.3",
     "@prisma/client": "^4.13.0",
     "@types/node": "18.16.3",

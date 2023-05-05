@@ -1,14 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import {createKysely} from "@vercel/postgres-kysely";
-import {Database} from "@/kisily/test";
-import {NextResponse} from "next/server";
-import * as awilix from "awilix";
-import {asValue} from "awilix";
-/*import * as utils from "@medusajs/utils";*/
-/*import * as glob from "glob";*/
-/*import * as sdk from "@medusajs/modules-sdk";*/
+import { Test } from "../../db/test"
+import {MikroORM} from "@mikro-orm/core";
 
 export const config = {
   runtime: 'edge', // this is a pre-requisite
@@ -16,19 +10,29 @@ export const config = {
 };
 
 export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse,
 ) {
-  /*glob.globSync('**!/!*.ts')*/
-  const container = awilix.createContainer()
-  container.register("test", asValue("test"))
-  const scope = container.createScope()
-  const test = scope.resolve("test")
+  const ormConfig = {
+    dbName: process.env.POSTGRES_DATABASE,
+    debug: process.env.APP_ENV === 'development',
+    entities: [Test],
+    baseDir: process.cwd(),
+    host: process.env.POSTGRES_HOST,
+    driverOptions: {
+      connection: { ssl: true },
+    },
+    password: process.env.POSTGRES_PASSWORD,
+    port: Number(process.env.POSTGRES_PORT),
+    tsNode: process.env.APP_ENV === 'development',
+    type: 'postgresql',
+    user: process.env.POSTGRES_USER
+  } as any
 
-  const client = createKysely<Database>()
+  const orm = await MikroORM.init(ormConfig)
 
-  const tests = await client
-      .selectFrom('test')
-      .select(['id'])
-      .execute()
+  const em = orm.em.fork()
+  const tests = await em.find(Test, {});
 
-  return NextResponse.json({ data: tests });
+  res.status(200).json(tests)
 }

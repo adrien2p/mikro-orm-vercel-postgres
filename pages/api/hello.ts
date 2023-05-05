@@ -3,7 +3,6 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import {createKysely} from "@vercel/postgres-kysely";
 import {Database} from "@/kisily/test";
-import { Pool } from '@vercel/postgres';
 
 export const config = {
   runtime: 'edge', // this is a pre-requisite

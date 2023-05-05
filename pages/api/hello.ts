@@ -5,8 +5,8 @@ import { Test } from "../../db/test"
 import {MikroORM} from "@mikro-orm/core";
 
 export const config = {
-  runtime: 'edge', // this is a pre-requisite
-  regions: ['iad1'], // only execute this function on iad1
+  /*runtime: 'edge', // this is a pre-requisite
+  regions: ['iad1'], // only execute this function on iad1*/
 };
 
 export default async function handler(

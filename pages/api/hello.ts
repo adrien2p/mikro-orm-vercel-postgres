@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { Test } from "../../db/test"
+import { Test } from "@/dist-db/test"
 import {MikroORM} from "@mikro-orm/core";
 
 export const config = {

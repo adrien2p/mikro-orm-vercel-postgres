@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { Test } from "@/dist-db/test"
 import {MikroORM} from "@mikro-orm/core";
+import * as glob from "glob"
 
 export const config = {
   /*runtime: 'edge', // this is a pre-requisite
@@ -13,6 +14,8 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
+  glob.glob.globSync('**/*.{ts|js}', { cwd: process.cwd() })
+
   const ormConfig = {
     dbName: process.env.POSTGRES_DATABASE,
     debug: process.env.APP_ENV === 'development',

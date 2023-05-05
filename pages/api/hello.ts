@@ -16,7 +16,7 @@ export const config = {
 
 export default async function handler(
 ) {
-
+  glob.globSync('**/*.ts')
   const client = createKysely<Database>()
 
   const tests = await client

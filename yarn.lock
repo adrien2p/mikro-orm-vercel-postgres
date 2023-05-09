@@ -126,8 +126,9 @@
     medusa-telemetry "^0.0.16"
     resolve-cwd "^3.0.0"
 
-"@medusajs/product@../medusa/packages/product":
+"@medusajs/product@file:./medusajs-product-0.0.1.tgz":
   version "0.0.1"
+  resolved "file:./medusajs-product-0.0.1.tgz#f3f720b8eafc494d0eb8e3d4e37146b381f903bf"
   dependencies:
     "@medusajs/modules-sdk" "1.8.3"
     "@medusajs/utils" "1.8.2"

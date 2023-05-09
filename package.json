@@ -10,7 +10,7 @@
     "lint": "node_modules/.bin/next lint"
   },
   "dependencies": {
-    "@medusajs/product": "file:./medusajs-product-0.0.1.tgz",
+    "@medusajs/product": "./medusajs-product-0.0.1.tgz",
     "@mikro-orm/core": "^5.7.4",
     "@mikro-orm/postgresql": "^5.7.4",
     "@types/node": "18.16.3",

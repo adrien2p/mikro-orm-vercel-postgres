@@ -127,7 +127,7 @@
 
 "@medusajs/product@./package.tgz":
   version "0.0.1"
-  resolved "./package.tgz#48426dc6670f77bbeaf581b845f5a5a09f871e82"
+  resolved "./package.tgz#8aff82b2bc155c4da17fde92dc95e5dda16bf4c0"
   dependencies:
     "@medusajs/modules-sdk" "1.8.3"
     "@medusajs/utils" "1.8.2"

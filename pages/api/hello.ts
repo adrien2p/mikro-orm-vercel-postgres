@@ -12,14 +12,15 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
-  const { productService } = await ProductModuleInitialize({
+  const productModule = await ProductModuleInitialize({
     database: {
-      clientUrl: "postgres://postgres@localhost/medusa-products",
+      clientUrl: "postgres://postgres:5432@localhost/medusa-products",
       schema: "public",
     }
   })
 
-  const data = await productService.listVariants()
+  console.log(productModule)
+  const data = await productModule.listVariants()
 
   res.status(200).json(data)
 }

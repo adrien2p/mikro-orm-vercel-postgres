@@ -7,7 +7,7 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@babel/runtime@^7.15.4", "@babel/runtime@^7.20.7":
+"@babel/runtime@^7.15.4", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0":
   version "7.21.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.5.tgz#8492dddda9644ae3bda3b45eabe87382caee7200"
   integrity sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==
@@ -114,10 +114,9 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@medusajs/modules-sdk@1.8.3":
+"@medusajs/modules-sdk@./sdk.tgz", "@medusajs/modules-sdk@1.8.3":
   version "1.8.3"
-  resolved "https://registry.yarnpkg.com/@medusajs/modules-sdk/-/modules-sdk-1.8.3.tgz#4203b2750154ce538d34155dd5872093a8aa8fd7"
-  integrity sha512-8j4FhIHz0avll0A7gtQ+hPnee+oWUr2ONgur4Ivj3vrtrjyevW10g3J75A0wFBkrgenvQMd7lqVTRkXqcb0hwg==
+  resolved "./sdk.tgz#af0e0bbc9c3b48805e54d7ea143021e0ef6931ad"
   dependencies:
     "@medusajs/types" "1.8.3"
     "@medusajs/utils" "1.8.2"
@@ -126,21 +125,9 @@
     medusa-telemetry "^0.0.16"
     resolve-cwd "^3.0.0"
 
-"@medusajs/product@./medusa-product.tgz":
-  version "0.0.1"
-  resolved "./medusa-product.tgz#f11f6e306467b68c9791b11b971755677471aa01"
-  dependencies:
-    "@medusajs/modules-sdk" "1.8.3"
-    "@medusajs/utils" "1.8.2"
-    "@mikro-orm/core" "^5.7.4"
-    "@mikro-orm/migrations" "^5.7.4"
-    "@mikro-orm/postgresql" "^5.7.4"
-    awilix "^8.0.0"
-    module-alias "^2.2.2"
-
 "@medusajs/product@./package.tgz":
   version "0.0.1"
-  resolved "./package.tgz#59ceb13ee606eb1f7e596c77642769d38edca610"
+  resolved "./package.tgz#48426dc6670f77bbeaf581b845f5a5a09f871e82"
   dependencies:
     "@medusajs/modules-sdk" "1.8.3"
     "@medusajs/utils" "1.8.2"
@@ -166,43 +153,43 @@
     ulid "^2.3.0"
 
 "@mikro-orm/core@^5.7.4":
-  version "5.7.4"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/core/-/core-5.7.4.tgz#625353b5c370646624de719769173e8acfc877a6"
-  integrity sha512-UA53JbdTkcyYCrzUPcMlAdWEvYfoLcZ/d90AWbS0fSIEKAAU0p57aL2J2+XqywNQfuEvnMVZsNvK5AWFaFRNsQ==
+  version "5.7.5"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/core/-/core-5.7.5.tgz#b5eae691580547aeac105fbb6dd5f6b2d8682412"
+  integrity sha512-Jakjz7qScsoHBHkFG7/A73M0TVTsNylPD/eDNQ+yoq73GwQ1NcJmhzQhMQQuF+5YpKdvnL2gUbNSzQ1MJ3OEcQ==
   dependencies:
     acorn-loose "8.3.0"
     acorn-walk "8.2.0"
     dotenv "16.0.3"
     fs-extra "11.1.1"
     globby "11.1.0"
-    mikro-orm "~5.7.4"
+    mikro-orm "~5.7.5"
     reflect-metadata "0.1.13"
 
-"@mikro-orm/knex@~5.7.4":
-  version "5.7.4"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/knex/-/knex-5.7.4.tgz#dc235ddeb5ad754841b9b937cce94ffe6cace81a"
-  integrity sha512-DP7h2Ib5QBDWgCQj3AGv/4KIL78vAuNwVQAC0CV6yk+q/6yIiBHNnjgw1b4aFcRcBemKaFx+jjEhA03flxaebQ==
+"@mikro-orm/knex@~5.7.5":
+  version "5.7.5"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/knex/-/knex-5.7.5.tgz#d63b720c868e779987b6302eadfdbbfb99f86bfe"
+  integrity sha512-Y9/sCi7ffojgt/gq0oeANqehqPmsEzpttbJVTmp73T6WUbWYmKVxnu9nSEjSrHkKaCwKw7N0olhf2Y8Mn7+Ykg==
   dependencies:
     fs-extra "11.1.1"
     knex "2.4.2"
     sqlstring "2.3.3"
 
 "@mikro-orm/migrations@^5.7.4":
-  version "5.7.4"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/migrations/-/migrations-5.7.4.tgz#addfa875986c3e0ab39c915e3bdd2af857c38432"
-  integrity sha512-en3JYWKZGrLJAunD7nIPegangUnGNyUktJthVZxiXSQBsKsQXnZPXyYmEN98QaPaHRXHSSg23PWYjIuII/MuaA==
+  version "5.7.5"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/migrations/-/migrations-5.7.5.tgz#818e954d1cfc6f86e50928c8dc306881bf92af24"
+  integrity sha512-Hazx1ffxzFn6LloxS4rRGfZOn//XwkrbrG/zTvuDYEB8OB9zyBXjydvA71wKHcZ11XMyE1/u2faC0FlhI5JXYA==
   dependencies:
-    "@mikro-orm/knex" "~5.7.4"
+    "@mikro-orm/knex" "~5.7.5"
     fs-extra "11.1.1"
     knex "2.4.2"
     umzug "3.2.1"
 
 "@mikro-orm/postgresql@^5.7.4":
-  version "5.7.4"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/postgresql/-/postgresql-5.7.4.tgz#34c9e1f724608acdf76a79167c7386f2a4ffd51d"
-  integrity sha512-geYzHroz58zIaic5HkyP5usSkRG8EcT+owdhDF8eYE9wvjAc4dlB09p1Amwyd5FKkRbHtVfIieXosxyHt7wI9w==
+  version "5.7.5"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/postgresql/-/postgresql-5.7.5.tgz#99f935cd2ac70766e6269ec3f862b096a5c30fe7"
+  integrity sha512-nJOUAg9UZ4hQkp8Ho7Smr9aXAQC6m0gGtJ/8wAVJaNE7eH0e/4z3Ab3KqgactmJywKAQt8MzF7A8q92sY8H7Wg==
   dependencies:
-    "@mikro-orm/knex" "~5.7.4"
+    "@mikro-orm/knex" "~5.7.5"
     pg "8.10.0"
 
 "@next/env@13.3.4":
@@ -931,6 +918,13 @@ damerau-levenshtein@^1.0.8:
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
+date-fns@^2.29.3:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.30.0.tgz#f367e644839ff57894ec6ac480de40cae4b0f4d0"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
+
 debug@4.3.4, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
@@ -1059,9 +1053,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.387"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.387.tgz#9a93ef1bd01b5898436026401ea3cabb1dd17d7a"
-  integrity sha512-tutLf+alr1/0YqJwKPdstVvDLmxmLb5xNyDLNS0RZmenHcEYk9qKfpKDCVZEKJ00JVbnayJm1MZAbYhYDFpcOw==
+  version "1.4.388"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.388.tgz#ec0d1be823d5b14da56d91ec5c57e84b4624ea45"
+  integrity sha512-xZ0y4zjWZgp65okzwwt00f2rYibkFPHUv9qBz+Vzn8cB9UXIo9Zc6Dw81LJYhhNt0G/vR1OJEfStZ49NKl0YxQ==
 
 emittery@^0.12.1:
   version "0.12.1"
@@ -1079,9 +1073,9 @@ emoji-regex@^9.2.2:
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
 
 enhanced-resolve@^5.12.0:
-  version "5.13.0"
-  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.13.0.tgz#26d1ecc448c02de997133217b5c1053f34a0a275"
-  integrity sha512-eyV8f0y1+bzyfh8xAwW/WTSZpLbjhqc4ne9eGSH4Zo2ejdyiNG9pU6mf9DG8a7+Auk6MFTlNOT4Y2y/9k8GKVg==
+  version "5.14.0"
+  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.14.0.tgz#0b6c676c8a3266c99fa281e4433a706f5c0c61c4"
+  integrity sha512-+DCows0XNwLDcUhbFJPdlQEVnT2zXlCv7hPxemTz86/O+B/hCQ+mb7ydkPKiflpVraqLPCAfu7lDy+hBXueojw==
   dependencies:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
@@ -1638,9 +1632,9 @@ glob@7.1.7:
     path-is-absolute "^1.0.0"
 
 glob@^10.2.2:
-  version "10.2.2"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-10.2.2.tgz#ce2468727de7e035e8ecf684669dc74d0526ab75"
-  integrity sha512-Xsa0BcxIC6th9UwNjZkhrMtNo/MnyRL8jGCP+uEwhA5oFOCY1f2s1/oNKY47xQ0Bg5nkjsfAEIej1VeH62bDDQ==
+  version "10.2.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-10.2.3.tgz#aa6765963fe6c5936d5c2e00943e7af06302a1a7"
+  integrity sha512-Kb4rfmBVE3eQTAimgmeqc2LwSnN0wIOkkUL6HmxEFxNJ4fHghYHVbFba/HcGcRjE6s9KoMNK3rSOwkL4PioZjg==
   dependencies:
     foreground-child "^3.1.0"
     jackspeak "^2.0.3"
@@ -2268,10 +2262,10 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-mikro-orm@~5.7.4:
-  version "5.7.4"
-  resolved "https://registry.yarnpkg.com/mikro-orm/-/mikro-orm-5.7.4.tgz#37d5353f1f0b8cede99f997157b6cd1e895ed81e"
-  integrity sha512-1j5k5u9Ip4w8rnvGhcGma/8fSJmSoQ3rb0sa+eehpFpFMBVYyHJ3Sqz19X8FjbRpQw0F7lhydoJUNfxQzFISWQ==
+mikro-orm@~5.7.5:
+  version "5.7.5"
+  resolved "https://registry.yarnpkg.com/mikro-orm/-/mikro-orm-5.7.5.tgz#eca06c8c9c15f77d9bcb93ba4142ec2432a0028d"
+  integrity sha512-nx+hKgjK4+VgCiESmcVDvuBfVtSIrYodEjFHlVG85whEOwjYYi3ntBE1HloRVOVj0CAp1/KUEybo28ki8v0VNA==
 
 mimic-fn@^2.1.0:
   version "2.1.0"
@@ -2325,11 +2319,6 @@ mkdirp@^2.1.3:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-2.1.6.tgz#964fbcb12b2d8c5d6fbc62a963ac95a273e2cc19"
   integrity sha512-+hEnITedc8LAtIP9u3HJDFIdcLV2vXP33sqLLIzkv1Db1zO/1OxbvYf0Y1OC/S/Qo5dxHXepofhmxL02PsKe+A==
-
-module-alias@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/module-alias/-/module-alias-2.2.2.tgz#151cdcecc24e25739ff0aa6e51e1c5716974c0e0"
-  integrity sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
 
 ms@2.1.2:
   version "2.1.2"
@@ -2696,9 +2685,9 @@ pirates@^4.0.1:
   integrity sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==
 
 pony-cause@^2.1.2:
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/pony-cause/-/pony-cause-2.1.9.tgz#39cd05418a94ee285d6f956f7df530449a497605"
-  integrity sha512-DIWdKGa0CSu5W1ooX1bcw4jQ+Fo++sgee0v1iczO7epT/suU/s2XBA8JDMl+8zkXZkjyfHfPaEngFwK5L3D9pg==
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/pony-cause/-/pony-cause-2.1.10.tgz#828457ad6f13be401a075dbf14107a9057945174"
+  integrity sha512-3IKLNXclQgkU++2fSi93sQ6BznFuxSLB11HdvZQ6JW/spahf/P1pAHBQEahr20rs0htZW0UDkM1HmA+nZkXKsw==
 
 postcss-import@^15.1.0:
   version "15.1.0"
@@ -3344,15 +3333,16 @@ typedarray-to-buffer@^3.1.5:
     is-typedarray "^1.0.0"
 
 typeorm@^0.3.14:
-  version "0.3.15"
-  resolved "https://registry.yarnpkg.com/typeorm/-/typeorm-0.3.15.tgz#8548cba64b746a0eadeab65b18ea21cd31ac7468"
-  integrity sha512-R4JSw8QjDP1W+ypeRz/XrCXIqubrLSnNAzJAp9EQSQIPHTv+YmUHZis8g08lOwFpuhqL9m8jkPSz8GWEKlU/ow==
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/typeorm/-/typeorm-0.3.16.tgz#a001d77b36cfaaf9ff495e15805dd17883116b7b"
+  integrity sha512-wJ4Qy1oqRKNDdZiBTTaVMqwo/XxC52Q7uNPTjltPgLhvIW173bL6Iad0lhptMOsFlpixFPaUu3PNziaRBwX2Zw==
   dependencies:
     "@sqltools/formatter" "^1.2.5"
     app-root-path "^3.1.0"
     buffer "^6.0.3"
     chalk "^4.1.2"
     cli-highlight "^2.1.11"
+    date-fns "^2.29.3"
     debug "^4.3.4"
     dotenv "^16.0.3"
     glob "^8.1.0"

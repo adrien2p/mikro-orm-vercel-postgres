@@ -10,6 +10,7 @@
     "lint": "node_modules/.bin/next lint"
   },
   "dependencies": {
+    "@medusajs/modules-sdk": "./sdk.tgz",
     "@medusajs/product": "./package.tgz",
     "@mikro-orm/core": "^5.7.4",
     "@mikro-orm/postgresql": "^5.7.4",

@@ -8,18 +8,17 @@ export const config = {
   regions: ['iad1'], // only execute this function on iad1*/
 };
 
+const productModule = await ProductModuleInitialize({
+  database: {
+    clientUrl: process.env.POSTGRES_URL!,
+    schema: "public",
+  }
+})
+
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
-  const productModule = await ProductModuleInitialize({
-    database: {
-      clientUrl: process.env.POSTGRES_URL!,
-      schema: "public",
-    }
-  })
-
-  console.log(productModule)
   const data = await productModule.listVariants()
 
   res.status(200).json(data)

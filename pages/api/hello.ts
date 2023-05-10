@@ -14,7 +14,7 @@ export default async function handler(
 ) {
   const productModule = await ProductModuleInitialize({
     database: {
-      clientUrl: "postgres://postgres:5432@localhost/medusa-products",
+      clientUrl: process.env.POSTGRES_URL!,
       schema: "public",
     }
   })

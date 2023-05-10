@@ -138,9 +138,9 @@
     awilix "^8.0.0"
     module-alias "^2.2.2"
 
-"@medusajs/product@./medusajs-product-0.0.1.tgz":
+"@medusajs/product@./package.tgz":
   version "0.0.1"
-  resolved "./medusajs-product-0.0.1.tgz#ad3e5f9f24a5fe6fc96b4d91fd962aa98e765a34"
+  resolved "./package.tgz#59ceb13ee606eb1f7e596c77642769d38edca610"
   dependencies:
     "@medusajs/modules-sdk" "1.8.3"
     "@medusajs/utils" "1.8.2"
